@@ -1,0 +1,11 @@
+[package]
+name = "repro-analyzer-sqlx"
+version = "0.1.0"
+authors = ["Brian Misiak <bmisiak@me.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-std = "1.9.0"
+sqlx = { version = "0.4.2", features = ["runtime-async-std-native-tls","postgres"] }
