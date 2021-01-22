@@ -1,4 +1,3 @@
-#[derive(sqlx::FromRow)]
 struct Model {
     id: i32
 }
@@ -12,9 +11,5 @@ async fn repro(postgres: &sqlx::PgPool) -> Result<Model, sqlx::Error> {
 }
 
 fn main() {
-    async_std::task::block_on(async {
-        let pool = sqlx::postgres::PgPool::connect("postgres://localhost/repro").await.unwrap();
-        let model = repro(&pool).await.unwrap();
-        println!("{}",model.id);
-    });
+    
 }
